@@ -5,11 +5,13 @@ import { type EvaluacionResponse, evaluarCliente } from '../clients/hotelstrombo
 const edad = ref<number>(0);
 const ingreso = ref<number>(0);
 const n_personas = ref<number>(0);
+const metodo_pago = ref<string>('efectivo');
+const n_dni = ref<number>(12345672);
 const resultado = ref<EvaluacionResponse | null>(null);
  
 async function onSubmit() {
   try {
-    resultado.value = await evaluarCliente(edad.value, ingreso.value, n_personas.value);
+    resultado.value = await evaluarCliente(edad.value, ingreso.value, n_personas.value, metodo_pago.value, n_dni.value);
   } catch(e) {
     window.alert('Ocurrió un error al procesar la solicitud, intente nuevamente');
   }
@@ -28,6 +30,18 @@ async function onSubmit() {
 
     <label style="font-family: 'Bitcount Grid Double'" class="mx-2" >Numero de personas:</label>
     <input type="number" v-model="n_personas"/>
+
+    <br>
+
+    <label style="font-family: 'Bitcount Grid Double'" class="mx-2" >Documento de identidad:</label>
+    <input type="number" v-model="n_dni"/>
+
+    <label style="font-family: 'Bitcount Grid Double'" class="mx-2" >Metodo de pago:</label>
+    <select v-model="metodo_pago">
+      <option value="efectivo">Efectivo</option>
+      <option value="tarjeta">Tarjeta</option>
+      <option value="transferencia">Transferencia</option>
+    </select>
 
     <button style="font-family: 'Bitcount Grid Double'" class="mx-2" type="submit">Evaluar</button>
   </form>

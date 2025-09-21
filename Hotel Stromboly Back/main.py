@@ -15,13 +15,13 @@ app.add_middleware(
 )
 
 @app.get("/evaluaciones/cliente")
-def evaluar_estado_cliente(edad: int, ingreso: int, n_personas: int):
-    if edad < 0 or ingreso < 0 or n_personas < 0:
+def evaluar_estado_cliente(edad: int, ingreso: int, n_personas: int, metodo_pago: str, n_dni: str):
+    if edad < 0 or ingreso < 0 or n_personas < 0 or metodo_pago not in ["tarjeta", "efectivo", "transferencia"] or len(n_dni) != 8:
         raise HTTPException(status_code=400, detail="Datos inválidos")
 
     time.sleep(0.4)  # Simula una espera de 400 ms
 
-    resultado = evaluar_cliente(edad, ingreso, n_personas)
+    resultado = evaluar_cliente(edad, ingreso, n_personas, metodo_pago, n_dni)
     if resultado["califica"]:
         return {
         "status": "APROBADO 😊 👍",

@@ -11,7 +11,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 10,
-            "n_personas": 1
+            "n_personas": 1,
+            "metodo_pago": "efectivo",
+            "n_dni": "12345678"
         })
 
     @task
@@ -20,7 +22,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 30,
-            "n_personas": 1
+            "n_personas": 1,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12345678"
         })
 
     @task
@@ -29,7 +33,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 35,
-            "n_personas": 2
+            "n_personas": 2,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12345672"
         }) 
     
     @task
@@ -38,7 +44,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 35,
-            "n_personas": 1
+            "n_personas": 1,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12345672"
         })
 
     @task
@@ -47,7 +55,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 40,
-            "n_personas": 2
+            "n_personas": 2,
+            "metodo_pago": "transferencia",
+            "n_dni": "12345672"
         })
 
     @task
@@ -56,7 +66,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 40,
-            "n_personas": 1
+            "n_personas": 1,
+            "metodo_pago": "efectivo",
+            "n_dni": "12325672"
         }) 
 
     @task
@@ -65,7 +77,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 45,
-            "n_personas": 2
+            "n_personas": 2,
+            "metodo_pago": "efectivo",
+            "n_dni": "12345172"
         })
     
     @task
@@ -74,7 +88,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 50,
-            "n_personas": 2
+            "n_personas": 2,
+            "metodo_pago": "transferencia",
+            "n_dni": "12345672"
         })
 
     @task
@@ -83,7 +99,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 55,
-            "n_personas": 4
+            "n_personas": 4,
+            "metodo_pago": "efectivo",
+            "n_dni": "12345672"
         })
     
     @task
@@ -92,7 +110,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 55,
-            "n_personas": 2
+            "n_personas": 2,
+            "metodo_pago": "efectivo",
+            "n_dni": "63564765"
         })
 
     @task
@@ -101,7 +121,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 60,
-            "n_personas": 4
+            "n_personas": 4,
+            "metodo_pago": "tarjeta",
+            "n_dni": "63564765"
         })
 
     @task
@@ -110,7 +132,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 65,
-            "n_personas": 4
+            "n_personas": 4,
+            "metodo_pago": "transferencia",
+            "n_dni": "63564765"
         })
 
     @task
@@ -119,7 +143,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 70,
-            "n_personas": 4
+            "n_personas": 4,
+            "metodo_pago": "tarjeta",
+            "n_dni": "63564765"
         })
 
     @task
@@ -128,7 +154,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 70,
-            "n_personas": 6
+            "n_personas": 6,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12345678"
         })
 
     @task
@@ -137,7 +165,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 70,
-            "n_personas": 3
+            "n_personas": 3,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12345678"
         })
 
     @task
@@ -146,7 +176,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 80,
-            "n_personas": 3
+            "n_personas": 3,
+            "metodo_pago": "efectivo",
+            "n_dni": "12345678"
         })
 
     @task
@@ -155,7 +187,9 @@ class EvaluacionesUser(HttpUser):
         self.client.get("/evaluaciones/cliente", params={
             "edad": edad,
             "ingreso": 90,
-            "n_personas": 3
+            "n_personas": 3,
+            "metodo_pago": "tarjeta",
+            "n_dni": "12343245"
         })
 
     @task

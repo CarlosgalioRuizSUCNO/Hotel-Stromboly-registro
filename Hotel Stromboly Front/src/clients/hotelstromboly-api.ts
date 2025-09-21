@@ -7,8 +7,8 @@ export interface EvaluacionResponse {
   };
 }
  
-export async function evaluarCliente(edad: number, ingreso: number, n_personas: number): Promise<EvaluacionResponse> {
-  const res = await fetch(`http://localhost:8000/evaluaciones/cliente?edad=${edad}&ingreso=${ingreso}&n_personas=${n_personas}`);
+export async function evaluarCliente(edad: number, ingreso: number, n_personas: number, metodo_pago: string, n_dni: number): Promise<EvaluacionResponse> {
+  const res = await fetch(`http://localhost:8000/evaluaciones/cliente?edad=${edad}&ingreso=${ingreso}&n_personas=${n_personas}&metodo_pago=${metodo_pago}&n_dni=${n_dni}`);
 
   if (!res.ok) {
     throw new Error("Un error sucedió en el sistema.")
