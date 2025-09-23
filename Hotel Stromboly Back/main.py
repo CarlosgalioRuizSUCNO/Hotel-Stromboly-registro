@@ -26,6 +26,7 @@ def evaluar_estado_cliente(edad: int, ingreso: int, n_personas: int, metodo_pago
         return {
         "status": "APROBADO 😊 👍",
         "mensaje": f"Felicidades, usted puede alquilar una habitación {resultado['habitacion']}",
+        "description": resultado['descripcion'],
         "data": resultado
     }
     else:

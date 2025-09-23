@@ -4,6 +4,7 @@ export interface EvaluacionResponse {
   data: {
     califica: boolean,
     habitacion: string | null,
+    descripcion: string | null
   };
 }
  

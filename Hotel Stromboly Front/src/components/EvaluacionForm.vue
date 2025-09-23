@@ -49,6 +49,10 @@ async function onSubmit() {
     <h3 style="font-family: 'Bitcount Grid Double'" > {{ resultado.status }} </h3>
     <h3 style="font-family: 'Bitcount Grid Double'" > {{ resultado.mensaje }} </h3>
     <p style="font-family: 'Bitcount Grid Double'" > Tipo de habitacion: {{ resultado.data.habitacion }}</p>
+    
+    <div style="display: flex; justify-content: center;" >
+      <p style="font-family: 'Bitcount Grid Double'; max-width: 450px" > Descripcion: {{ resultado.data.descripcion }}</p>
+    </div>
   </div>
 </template>
  
