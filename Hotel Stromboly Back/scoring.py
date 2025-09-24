@@ -29,7 +29,7 @@ def evaluar_cliente(edad, ingreso, n_personas, metodo_pago, n_dni):
 
     # Doble Simple: Ingreso igual a 50 Soles, edad mayor o igual a 18 y numero de personas 2 o 3
     if ingreso == 50 and edad >= 18 and n_personas in [2, 3] and metodo_pago in ["tarjeta", "efectivo", "transferencia"] and len(n_dni) == 8:
-        return {"califica": True, "habitacion": "Doble Simple", "descripcion": "Habitacion con baño privado, TV con cable y 2 camas de plaza y media"}
+        return {"califica": True, "habitacion": "Doble Simple", "descripcion": "Habitacion con baño privado, TV con cable y 2 camas de una plaza y media"}
     
     # Doble Simple: Ingreso igual a 55 Soles, edad mayor o igual a 18 y numero de personas 4
     if ingreso == 55 and edad >= 18 and n_personas == 4 and metodo_pago in ["tarjeta", "efectivo", "transferencia"] and len(n_dni) == 8:

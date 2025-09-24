@@ -48,7 +48,7 @@ def test_doble_simple_ingreso_50():
     resultado = evaluar_cliente(edad = 18, ingreso = 50, n_personas = 2, metodo_pago="transferencia", n_dni="12345678")
     assert resultado["califica"] is True
     assert resultado["habitacion"] == "Doble Simple"
-    assert resultado["descripcion"] == "Habitacion con baño privado, TV con cable y 2 camas de plaza y media"
+    assert resultado["descripcion"] == "Habitacion con baño privado, TV con cable y 2 camas de una plaza y media"
 
 def test_doble_simple_ingreso_55():
     resultado = evaluar_cliente(edad = 18, ingreso = 55, n_personas = 4, metodo_pago="transferencia", n_dni="12345678")

@@ -60,7 +60,7 @@ def test_endpoint_doble_simple_ingreso_50():
     response = client.get("/evaluaciones/cliente?edad=21&ingreso=50&n_personas=2&metodo_pago=transferencia&n_dni=12345672")
     assert response.status_code == 200
     assert response.json()["status"] == "APROBADO 😊 👍"
-    assert response.json()["description"] == "Habitacion con baño privado, TV con cable y 2 camas de plaza y media"
+    assert response.json()["description"] == "Habitacion con baño privado, TV con cable y 2 camas de una plaza y media"
 
 def test_endpoint_doble_simple_ingreso_55():
     response = client.get("/evaluaciones/cliente?edad=21&ingreso=55&n_personas=4&metodo_pago=efectivo&n_dni=12345672")
