@@ -55,3 +55,20 @@ def eliminar_Usuario(id: str):
     return {
         "id": id
         }
+
+@app.get("/habitaciones", tags=["Habitaciones"], summary="Obtener información de una habitación")
+def obtener_habitacion(edad: int, ingreso: int, n_personas: int, metodo_pago: str, n_dni: str):
+    time.sleep(0.4)  # Simula una espera de 400 ms
+
+    resultado = evaluar_cliente(edad, ingreso, n_personas, metodo_pago, n_dni)
+    if resultado["califica"]:
+        return {
+        "description": f"De acuerdo con la informacion brindada, tenemos una {resultado['descripcion']}",
+        "data": resultado
+    }
+    else:
+        return {
+        "status": "RECHAZADO",
+        "mensaje": "No cumple con los requisitos para alquilar una habitación",
+        "data": resultado
+    }
