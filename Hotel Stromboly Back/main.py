@@ -4,7 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 import random
 import time
 
-app = FastAPI()
+app = FastAPI(
+    title="Evaluaciones de clientes - Hotel Stromboly",
+    description="API para gestionar petciones de evaluacion de clientes para el alquiler de habitaciones en el Hotel Stromboly",
+    version="1.0.0"
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/evaluaciones/cliente")
+@app.get("/evaluaciones/cliente", tags=["Evaluaciones"], summary="Evaluar estado de un cliente")
 def evaluar_estado_cliente(edad: int, ingreso: int, n_personas: int, metodo_pago: str, n_dni: str):
     if edad < 0 or ingreso < 0 or n_personas < 0 or metodo_pago not in ["tarjeta", "efectivo", "transferencia"] or len(n_dni) != 8:
         raise HTTPException(status_code=400, detail="Datos inválidos")
@@ -36,18 +40,18 @@ def evaluar_estado_cliente(edad: int, ingreso: int, n_personas: int, metodo_pago
         "data": resultado
     }
 
-@app.post("/clientes")
-def crearUsuario():
+@app.post("/clientes", tags=["Clientes"], summary="Crear un nuevo cliente")
+def crear_Usuario():
     return {"id": random.randint(1, 10)}
 
-@app.get("/clientes")
-def obtenerUsuario(id: int):
+@app.get("/clientes", tags=["Clientes"], summary="Obtener información de un cliente")
+def obtener_Usuario(id: int):
     return {
         "id": id
     }
 
-@app.delete("/clientes")
-def eliminarUsuario(id: str):
+@app.delete("/clientes", tags=["Clientes"], summary="Eliminar un cliente")
+def eliminar_Usuario(id: str):
     return {
         "id": id
         }

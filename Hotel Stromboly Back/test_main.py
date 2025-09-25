@@ -44,18 +44,6 @@ def test_endpoint_matrimonial_premium_ingreso_45():
     assert response.json()["status"] == "APROBADO 😊 👍"
     assert response.json()["description"] == "Habitacion con baño privado, TV con cable, cama de 2 plazas con vista a la calle"
 
-def test_endpoint_matrimonial_premium_ingreso_45():
-    response = client.get("/evaluaciones/cliente?edad=21&ingreso=45&n_personas=2&metodo_pago=efectivo&n_dni=12345172")
-    assert response.status_code == 200
-    assert response.json()["status"] == "APROBADO 😊 👍"
-    assert response.json()["description"] == "Habitacion con baño privado, TV con cable, cama de 2 plazas con vista a la calle"
-
-def test_endpoint_doble_simple_ingreso_50():
-    response = client.get("/evaluaciones/cliente?edad=21&ingreso=50&n_personas=2&metodo_pago=transferencia&n_dni=12345672")
-    assert response.status_code == 200
-    assert response.json()["status"] == "APROBADO 😊 👍"
-    assert response.json()["description"] == "Habitacion con baño privado, TV con cable y 2 camas de plaza y media"
-
 def test_endpoint_doble_simple_ingreso_50():
     response = client.get("/evaluaciones/cliente?edad=21&ingreso=50&n_personas=2&metodo_pago=transferencia&n_dni=12345672")
     assert response.status_code == 200
@@ -103,6 +91,21 @@ def test_endpoint_triple_premium_ingreso_90():
     assert response.status_code == 200
     assert response.json()["status"] == "APROBADO 😊 👍"
     assert response.json()["description"] == "Habitacion con baño privado, TV con cable, 2 camas de 1 plaza y media y 1 cama de 2 plazas con vista a la calle"
+
+def test_endpoint_post_clientes():
+    response = client.post("/clientes?id=1")
+    assert response.status_code == 200
+    assert "id" in response.json()
+
+def test_endpoint_get_clientes():
+    response = client.get("/clientes?id=1")
+    assert response.status_code == 200
+    assert "id" in response.json()
+
+def test_endpoint_delete_clientes():
+    response = client.delete("/clientes?id=1")
+    assert response.status_code == 200
+    assert "id" in response.json()
 
 def test_endpoint_caso_intermedio():
     response = client.get("/evaluaciones/cliente?edad=21&ingreso=25&n_personas=1&metodo_pago=efectivo&n_dni=12345672")
